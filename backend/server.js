@@ -29,3 +29,6 @@ app.use("/api/atm", require("./routes/atmRoutes"));
 app.listen(process.env.PORT || 5000, () => {
   console.log("Server Running");
 });
+app.get("/", (req, res) => {
+  res.send("ATM Backend API Running");
+});
