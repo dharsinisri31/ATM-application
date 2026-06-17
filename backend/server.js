@@ -10,10 +10,14 @@ connectDB();
 
 const app = express();
 
+const cors = require("cors");
+
 app.use(
-    cors({
-        origin: "https://atm-application-liart.vercel.app/",
-    }));
+  cors({
+    origin: "https://atm-application-liart.vercel.app",
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 app.use((err, req, res, next) => {
